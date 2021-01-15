@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import { Box } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   hero: {
@@ -49,6 +49,10 @@ export default function Hero() {
             (and occasionally designing) exceptional websites, applications, and
             everything in between.
           </Typography>
+          <Button variant="outlined" color="primary">
+            {" "}
+            Get In Touch
+          </Button>
         </Box>
       </Container>
     </React.Fragment>

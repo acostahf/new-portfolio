@@ -5,16 +5,29 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
+import { ThemeProvider } from "@material-ui/core";
+import theme from "./theme";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles((theme) => ({
+  // root: {
+  //   flexGrow: 4,
+  //   margin: 0,
+  //   backgroundColor: "#089e80",
+  // },
+}));
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <NavBar />
-      <Hero />
-      <About />
-      <Experience />
-      <Footer />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div class="App">
+        <NavBar />
+        <Hero />
+        <About />
+        <Experience />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

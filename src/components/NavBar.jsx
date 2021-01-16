@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   appbar: {
-    backgroundColor: "#089e80",
+    // backgroundColor: "#089e80",
   },
 }));
 
@@ -46,7 +46,7 @@ export default function HideAppBar(props) {
     <div className="classes.root">
       <CssBaseline />
       <HideOnScroll {...props}>
-        <AppBar className={classes.appbar}>
+        <AppBar className={classes.appbar} color="primary">
           <Toolbar>
             <IconButton
               edge="start"

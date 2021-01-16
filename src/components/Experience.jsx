@@ -77,24 +77,10 @@ export default function Experience() {
             <Tab label="General Assembly" {...a11yProps(2)} />
           </Tabs>
           <TabPanel value={value} index={0}>
-            <Typography
-              p={20}
-              variant="h6"
-              component="h6"
-              className={classes.tabText}
-            >
-              Front end developer @ Nimorah
-            </Typography>
+            Front end developer @ Nimorah
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <Typography
-              p={20}
-              variant="h2"
-              component="h2"
-              className={classes.tabText}
-            >
-              Server @ Cipollina
-            </Typography>
+            Server @ Cipollina
           </TabPanel>
           <TabPanel value={value} index={2}>
             Item Three

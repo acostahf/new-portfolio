@@ -7,12 +7,14 @@ import { Box, Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   hero: {
-    backgroundColor: "#089e80",
     flexGrow: 1,
     width: "100%",
     padding: 0,
     height: "100vh",
     display: "flex",
+    flexDirection: "row",
+    margin: "0 auto",
+    backgroundColor: "#132736",
   },
   heroBody: {
     padding: "10%",
@@ -48,7 +50,7 @@ export default function Hero() {
             I'm a software engineer based in Austin, Tx specializing in building
             exceptional websites, applications, and everything in between.
           </Typography>
-          <Button variant="outlined" color="primary">
+          <Button variant="outlined" color="secondary">
             {" "}
             Get In Touch
           </Button>

@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <Container className={classes.root}>
       <Box display="flex" justifyContent="center">
-        <Typography variant="h8">Built By Fabian Acosta</Typography>
+        <Typography variant="subtitle1">Built By Fabian Acosta</Typography>
       </Box>
     </Container>
   );

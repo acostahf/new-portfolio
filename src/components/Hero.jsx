@@ -6,6 +6,12 @@ import Container from "@material-ui/core/Container";
 import { Box, Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundImage: `url(${
+      process.env.PUBLIC_URL + "../../assests/pexels-stephan-seeber-1261728.jpg"
+    })`,
+    backgroundSize: "cover",
+  },
   hero: {
     flexGrow: 1,
     width: "100%",
@@ -14,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     margin: "0 auto",
-    backgroundColor: "#132736",
+
+    backgroundSize: "cover",
   },
   heroBody: {
     padding: "10%",
@@ -27,35 +34,40 @@ export default function Hero() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <CssBaseline />
-      <Container className={classes.hero}>
-        <Box
-          className={classes.heroBody}
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          alignContent="center"
-          alignItems="start"
-        >
-          <Typography variant="h6" component="h6">
-            Hi, my name is
-          </Typography>
-          <Typography variant="h2" component="h2">
-            Fabian Acosta
-          </Typography>
-          <Typography variant="h3" component="h3">
-            I build things for the web.
-          </Typography>
-          <Typography variant="body1" component="p">
-            I'm a software engineer based in Austin, Tx specializing in building
-            exceptional websites, applications, and everything in between.
-          </Typography>
-          <Button variant="outlined" color="secondary">
-            {" "}
-            Get In Touch
-          </Button>
-        </Box>
-      </Container>
+      <div className={classes.root}>
+        <CssBaseline />
+        <Container className={classes.hero}>
+          <Box
+            className={classes.heroBody}
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignContent="center"
+            alignItems="start"
+          >
+            <div class="GlassBox">
+              <Typography variant="h6" component="h6">
+                Hi, my name is
+              </Typography>
+              <Typography variant="h2" component="h2">
+                Fabian Acosta
+              </Typography>
+              <Typography variant="h3" component="h3">
+                I build things for the web.
+              </Typography>
+              <Typography variant="body1" component="p">
+                I'm a software engineer based in Austin, Tx specializing in
+                building exceptional websites, applications, and everything in
+                between.
+              </Typography>
+              <Button variant="outlined" color="primary">
+                {" "}
+                Get In Touch
+              </Button>
+            </div>
+          </Box>
+        </Container>
+      </div>
     </React.Fragment>
   );
 }

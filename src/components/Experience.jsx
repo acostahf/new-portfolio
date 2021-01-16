@@ -63,31 +63,33 @@ export default function Experience() {
   return (
     <Container className={classes.root}>
       <Box className={classes.box1}>
-        <div className={classes.vtabs}>
-          <Tabs
-            orientation="vertical"
-            variant="scrollable"
-            value={value}
-            onChange={handleChange}
-            aria-label="Vertical tabs "
-            className={classes.tabs}
-          >
-            <Tab label="Nimorah" {...a11yProps(0)} />
-            <Tab label="Cipollina" {...a11yProps(1)} />
-            <Tab label="General Assembly" {...a11yProps(2)} />
-          </Tabs>
-          <TabPanel value={value} index={0}>
-            Front end developer @ Nimorah
-          </TabPanel>
-          <TabPanel value={value} index={1}>
-            Server @ Cipollina
-          </TabPanel>
-          <TabPanel value={value} index={2}>
-            Item Three
-          </TabPanel>
-          <TabPanel value={value} index={3}>
-            Item Four
-          </TabPanel>
+        <div class="GlassBox">
+          <div className={classes.vtabs}>
+            <Tabs
+              orientation="vertical"
+              variant="scrollable"
+              value={value}
+              onChange={handleChange}
+              aria-label="Vertical tabs "
+              className={classes.tabs}
+            >
+              <Tab label="Nimorah" {...a11yProps(0)} />
+              <Tab label="Cipollina" {...a11yProps(1)} />
+              <Tab label="General Assembly" {...a11yProps(2)} />
+            </Tabs>
+            <TabPanel value={value} index={0}>
+              Front end developer @ Nimorah
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              Server @ Cipollina
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+              Item Three
+            </TabPanel>
+            <TabPanel value={value} index={3}>
+              Item Four
+            </TabPanel>
+          </div>
         </div>
       </Box>
     </Container>

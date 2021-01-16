@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+// import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { Box, Card, CardMedia, Container, Typography } from "@material-ui/core";
 
@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
   },
   about: {
     backgroundColor: "#089e80",
-
     width: "100%",
     padding: "10%",
     height: "50%",

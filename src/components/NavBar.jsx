@@ -38,7 +38,7 @@ export default function NavBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Fabian Acosta
+            FA
           </Typography>
         </Toolbar>
       </AppBar>

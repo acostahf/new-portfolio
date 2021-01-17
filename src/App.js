@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import { ThemeProvider } from "@material-ui/core";
 import theme from "./theme";
 import { makeStyles } from "@material-ui/core/styles";
+import Projects from "./components/Projects";
 
 const useStyles = makeStyles((theme) => ({
   // root: {
@@ -24,6 +25,7 @@ function App() {
         <NavBar />
         <Hero />
         <About />
+        <Projects />
         <Experience />
         <Footer />
       </div>

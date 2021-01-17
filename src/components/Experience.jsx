@@ -40,7 +40,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     padding: "10%",
-    height: "50%",
+    height: "50vh",
+    backgroundColor: "#fff",
   },
   vtabs: {
     flexGrow: 1,
@@ -61,37 +62,39 @@ export default function Experience() {
     setValue(newValue);
   };
   return (
-    <Container className={classes.root}>
-      <Box className={classes.box1}>
-        <div class="GlassBox">
-          <div className={classes.vtabs}>
-            <Tabs
-              orientation="vertical"
-              variant="scrollable"
-              value={value}
-              onChange={handleChange}
-              aria-label="Vertical tabs "
-              className={classes.tabs}
-            >
-              <Tab label="Nimorah" {...a11yProps(0)} />
-              <Tab label="Cipollina" {...a11yProps(1)} />
-              <Tab label="General Assembly" {...a11yProps(2)} />
-            </Tabs>
-            <TabPanel value={value} index={0}>
-              Front end developer @ Nimorah
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-              Server @ Cipollina
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-              Item Three
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-              Item Four
-            </TabPanel>
+    <div className={classes.root}>
+      <Container>
+        <Box className={classes.box1}>
+          <div class="GlassBox">
+            <div className={classes.vtabs}>
+              <Tabs
+                orientation="vertical"
+                variant="scrollable"
+                value={value}
+                onChange={handleChange}
+                aria-label="Vertical tabs "
+                className={classes.tabs}
+              >
+                <Tab label="Nimorah" {...a11yProps(0)} />
+                <Tab label="Cipollina" {...a11yProps(1)} />
+                <Tab label="General Assembly" {...a11yProps(2)} />
+              </Tabs>
+              <TabPanel value={value} index={0}>
+                Front end developer @ Nimorah
+              </TabPanel>
+              <TabPanel value={value} index={1}>
+                Server @ Cipollina
+              </TabPanel>
+              <TabPanel value={value} index={2}>
+                Item Three
+              </TabPanel>
+              <TabPanel value={value} index={3}>
+                Item Four
+              </TabPanel>
+            </div>
           </div>
-        </div>
-      </Box>
-    </Container>
+        </Box>
+      </Container>
+    </div>
   );
 }

@@ -11,10 +11,12 @@ const useStyles = makeStyles((theme) => ({
 export default function Footer() {
   const classes = useStyles();
   return (
-    <Container className={classes.root}>
-      <Box display="flex" justifyContent="center">
-        <Typography variant="subtitle1">Built By Fabian Acosta</Typography>
-      </Box>
-    </Container>
+    <div className={classes.root}>
+      <Container>
+        <Box display="flex" justifyContent="center">
+          <Typography variant="subtitle1">Built By Fabian Acosta</Typography>
+        </Box>
+      </Container>
+    </div>
   );
 }

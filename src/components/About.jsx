@@ -5,6 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Box, Card, CardMedia, Container, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: "#fff",
+  },
   card: {
     maxWidth: 300,
     maxHeight: 300,
@@ -30,73 +33,75 @@ const useStyles = makeStyles((theme) => ({
 export default function About() {
   const classes = useStyles();
   return (
-    <Container className={classes.about}>
-      <Box
-        display="flex"
-        flexDirection="row"
-        justifyContent="space-around"
-        alignContent="center"
-        alignItems="center"
-        flexWrap="wrap"
-        className={classes.root}
-      >
-        <Box className={classes.heroBody}>
-          <div class="GlassBox">
-            <Typography
-              p={20}
-              variant="h2"
-              component="h2"
-              className={classes.heroBody}
-            >
-              About Me
-            </Typography>
-            <Typography
-              variant="h3"
-              component="h3"
-              className={classes.heroBody}
-            >
-              Hello! I'm Fabian, a software engineer based in Austin, TX.{" "}
-            </Typography>
-            <Typography
-              variant="body1"
-              component="p"
-              className={classes.heroBody}
-            >
-              I enjoy creating things that live on the internet, whether that be
-              websites, applications, or anything in between. My goal is to
-              always build products that provide pixel-perfect, performant
-              experiences.
-            </Typography>
-            <Typography
-              variant="body1"
-              component="p"
-              className={classes.heroBody}
-            >
-              Shortly after graduating from Northeastern University, I joined
-              the engineering team at Upstatement where I work on a wide variety
-              of interesting and meaningful projects on a daily basis.
-            </Typography>
-            <Typography
-              variant="body1"
-              component="p"
-              className={classes.heroBody}
-            >
-              Here are a few technologies I've been working with recently:
-            </Typography>
-          </div>
+    <div className={classes.root}>
+      <Container className={classes.about}>
+        <Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="space-around"
+          alignContent="center"
+          alignItems="center"
+          flexWrap="wrap"
+          className={classes.root}
+        >
+          <Box className={classes.heroBody}>
+            <div class="GlassBox">
+              <Typography
+                p={20}
+                variant="h2"
+                component="h2"
+                className={classes.heroBody}
+              >
+                About Me
+              </Typography>
+              <Typography
+                variant="h3"
+                component="h3"
+                className={classes.heroBody}
+              >
+                Hello! I'm Fabian, a software engineer based in Austin, TX.{" "}
+              </Typography>
+              <Typography
+                variant="body1"
+                component="p"
+                className={classes.heroBody}
+              >
+                I enjoy creating things that live on the internet, whether that
+                be websites, applications, or anything in between. My goal is to
+                always build products that provide pixel-perfect, performant
+                experiences.
+              </Typography>
+              <Typography
+                variant="body1"
+                component="p"
+                className={classes.heroBody}
+              >
+                Shortly after graduating from Northeastern University, I joined
+                the engineering team at Upstatement where I work on a wide
+                variety of interesting and meaningful projects on a daily basis.
+              </Typography>
+              <Typography
+                variant="body1"
+                component="p"
+                className={classes.heroBody}
+              >
+                Here are a few technologies I've been working with recently:
+              </Typography>
+            </div>
+          </Box>
+          <Box display="flex" flexWrap="wrap">
+            <div class="GlassBox">
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.media}
+                  image="../../assests/profile.jpg"
+                  title="Fabian Picture"
+                />
+              </Card>
+            </div>
+          </Box>
         </Box>
-        <Box display="flex" flexWrap="wrap">
-          <div class="GlassBox">
-            <Card className={classes.card}>
-              <CardMedia
-                className={classes.media}
-                image="../../assests/profile.jpg"
-                title="Fabian Picture"
-              />
-            </Card>
-          </div>
-        </Box>
-      </Box>
-    </Container>
+      </Container>
+    </div>
   );
 }

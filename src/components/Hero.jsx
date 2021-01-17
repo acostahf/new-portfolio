@@ -7,26 +7,19 @@ import { Box, Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundImage: `url(${
-      process.env.PUBLIC_URL + "../../assests/pexels-stephan-seeber-1261728.jpg"
-    })`,
-    backgroundSize: "cover",
+    height: "100vh",
+    display: "flex",
   },
   hero: {
     flexGrow: 1,
     width: "100%",
-    padding: 0,
-    height: "100vh",
     display: "flex",
-    flexDirection: "row",
-    margin: "0 auto",
-
-    backgroundSize: "cover",
+    justifyContent: "center",
+    flexDirection: "column ",
   },
   heroBody: {
     padding: "10%",
     margin: 10,
-    height: "50",
   },
 }));
 
@@ -37,14 +30,7 @@ export default function Hero() {
       <div className={classes.root}>
         <CssBaseline />
         <Container className={classes.hero}>
-          <Box
-            className={classes.heroBody}
-            display="flex"
-            flexDirection="column"
-            justifyContent="center"
-            alignContent="center"
-            alignItems="start"
-          >
+          <Box className={classes.heroBody}>
             <div class="GlassBox">
               <Typography variant="h6" component="h6">
                 Hi, my name is

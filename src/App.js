@@ -5,23 +5,27 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
-import { ThemeProvider } from "@material-ui/core";
+import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import theme from "./theme";
 import { makeStyles } from "@material-ui/core/styles";
 import Projects from "./components/Projects";
 
 const useStyles = makeStyles((theme) => ({
-  // root: {
-  //   flexGrow: 4,
-  //   margin: 0,
-  //   backgroundColor: "#089e80",
-  // },
+  root: {
+    height: "110vh",
+    backgroundImage: `url(${
+      process.env.PUBLIC_URL + "../../assests/pexels-stephan-seeber-1261728.jpg"
+    })`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  },
 }));
 function App() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-      <div class="App">
+      <div className={classes.root}>
+        <CssBaseline />
         <NavBar />
         <Hero />
         <About />

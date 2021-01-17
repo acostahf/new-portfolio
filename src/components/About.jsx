@@ -6,7 +6,7 @@ import { Box, Card, CardMedia, Container, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "#fff",
+    backgroundColor: "#64ffda",
   },
   card: {
     maxWidth: 300,

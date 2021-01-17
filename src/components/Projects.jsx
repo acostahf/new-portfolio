@@ -11,7 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "#383b3d",
+    // backgroundColor: "#383b3d",
     minHeight: "50vh",
     padding: "10%",
     margin: "0 auto",

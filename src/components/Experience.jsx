@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     padding: "10%",
-    height: "50vh",
+    maxHeight: "50vh",
     backgroundColor: "#fff",
   },
   vtabs: {
@@ -51,6 +51,10 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+    overflow: "visible",
+  },
+  tabpanel: {
+    overflow: "auto",
   },
 }));
 
@@ -76,20 +80,19 @@ export default function Experience() {
                 className={classes.tabs}
               >
                 <Tab label="Nimorah" {...a11yProps(0)} />
-                <Tab label="Cipollina" {...a11yProps(1)} />
-                <Tab label="General Assembly" {...a11yProps(2)} />
+                <Tab label="General Assembly" {...a11yProps(1)} />
               </Tabs>
-              <TabPanel value={value} index={0}>
-                Front end developer @ Nimorah
+              <TabPanel className={classes.tabpanel} value={value} index={0}>
+                My position here is to gain experience working with a team to
+                create applications for our clients to their needs. I
+                communicate with the back-end developer to create components
+                that the user can use.
               </TabPanel>
-              <TabPanel value={value} index={1}>
-                Server @ Cipollina
-              </TabPanel>
-              <TabPanel value={value} index={2}>
-                Item Three
-              </TabPanel>
-              <TabPanel value={value} index={3}>
-                Item Four
+              <TabPanel className={classes.tabpanel} value={value} index={1}>
+                Participated in a full-time immersive Software Engineering
+                course, completing in-class projects, and personal projects
+                focused on real-world applications of web development principles
+                and best practices.
               </TabPanel>
             </div>
           </div>

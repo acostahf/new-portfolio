@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 600,
   },
   card: {
-    minWidth: 600,
+    Width: 600,
     maxHeight: 300,
   },
   box1: {

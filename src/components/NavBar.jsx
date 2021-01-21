@@ -1,19 +1,15 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
+
 import {
   Button,
   IconButton,
   Slide,
   useScrollTrigger,
-  CssBaseline,
   Typography,
   Toolbar,
   AppBar,
-  Link,
-  SvgIcon,
 } from "@material-ui/core";
-import { LinkedIn } from "@material-ui/icons";
 
 function HideOnScroll(props) {
   const { children } = props;
@@ -44,8 +40,6 @@ const useStyles = makeStyles((theme) => ({
     height: 25,
     width: 25,
     fill: "#627383",
-
-    strokeWidth: 5,
   },
 }));
 
@@ -53,8 +47,7 @@ export default function HideAppBar(props) {
   const classes = useStyles();
 
   return (
-    <div className="classes.root">
-      <CssBaseline />
+    <div className={classes.root}>
       <HideOnScroll {...props}>
         <AppBar className={classes.appbar} elevation={0}>
           <Toolbar>

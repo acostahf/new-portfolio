@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import { Box, Button, ThemeProvider } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({

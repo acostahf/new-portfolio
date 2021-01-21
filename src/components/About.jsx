@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import theme from "../theme";
 
 import {
   Box,
@@ -8,7 +7,6 @@ import {
   CardMedia,
   Container,
   Typography,
-  ThemeProvider,
   Grid,
 } from "@material-ui/core";
 

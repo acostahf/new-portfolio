@@ -4,22 +4,12 @@ import {
   CardMedia,
   Grid,
   Box,
-  CssBaseline,
   Typography,
   IconButton,
-  ButtonBase,
   Link,
 } from "@material-ui/core";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-
-// anime({
-//   targets: "div",
-//   translateX: 250,
-//   rotate: "1turn",
-//   backgroundColor: "#FFF",
-//   duration: 800,
-// });
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     padding: "10%",
     margin: "0 auto",
   },
-
   media: {
     height: 300,
     maxWidth: 500,
@@ -37,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 500,
     maxHeight: 300,
   },
-
   heading: {
     color: "#fff",
     display: "flex",
@@ -56,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
   },
   subtitle: {
     color: "#627383",
-
     padding: 20,
   },
   img: {
@@ -75,7 +62,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-end",
-    // paddingRight: 10,
   },
 }));
 
@@ -105,11 +91,7 @@ export default function Projects() {
             </Grid>
             <Grid item xs={12} sm={12} md={6} className={classes.body}>
               <Box display="flex" flexDirection="column">
-                <Typography
-                  className={classes.h3}
-                  variant="h3"
-                  className={classes.h3}
-                >
+                <Typography variant="h3" className={classes.h3}>
                   Stock Watch{" "}
                 </Typography>
 
@@ -133,11 +115,7 @@ export default function Projects() {
 
             <Grid item xs={12} sm={12} md={6} className={classes.body}>
               <Box display="flex" flexDirection="column">
-                <Typography
-                  className={classes.h3}
-                  variant="h3"
-                  className={classes.h3}
-                >
+                <Typography variant="h3" className={classes.h3}>
                   E-commerce app
                 </Typography>
 
@@ -185,11 +163,7 @@ export default function Projects() {
             </Grid>
             <Grid item xs={12} sm={12} md={6} className={classes.body}>
               <Box display="flex" flexDirection="column">
-                <Typography
-                  className={classes.h3}
-                  variant="h3"
-                  className={classes.h3}
-                >
+                <Typography variant="h3" className={classes.h3}>
                   Restaurant Website
                 </Typography>
 

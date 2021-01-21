@@ -38,16 +38,24 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    height: "50vh",
     padding: "10%",
-    maxHeight: "50vh",
-    backgroundColor: "#fff",
+    margin: "0 auto",
+
+    // backgroundColor: "#fff",
   },
   vtabs: {
-    flexGrow: 1,
     backgroundColor: "none",
+    color: "#627383",
+
     display: "flex",
     height: 224,
+    borderRadius: "2%",
+    padding: 15,
+    margin: 20,
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -55,6 +63,20 @@ const useStyles = makeStyles((theme) => ({
   },
   tabpanel: {
     overflow: "auto",
+    padding: 5,
+  },
+  h4: {
+    color: "#fff",
+    margin: 20,
+  },
+  heading: {
+    margin: 20,
+    padding: 20,
+  },
+  wrapper: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 }));
 
@@ -68,34 +90,39 @@ export default function Experience() {
   return (
     <div className={classes.root}>
       <Container>
-        <Box className={classes.box1}>
-          <div class="GlassBox">
-            <div className={classes.vtabs}>
-              <Tabs
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs "
-                className={classes.tabs}
-              >
-                <Tab label="Nimorah" {...a11yProps(0)} />
-                <Tab label="General Assembly" {...a11yProps(1)} />
-              </Tabs>
-              <TabPanel className={classes.tabpanel} value={value} index={0}>
-                My position here is to gain experience working with a team to
-                create applications for our clients to their needs. I
-                communicate with the back-end developer to create components
-                that the user can use.
-              </TabPanel>
-              <TabPanel className={classes.tabpanel} value={value} index={1}>
-                Participated in a full-time immersive Software Engineering
-                course, completing in-class projects, and personal projects
-                focused on real-world applications of web development principles
-                and best practices.
-              </TabPanel>
-            </div>
-          </div>
+        <Box className={classes.heading}>
+          <Typography variant="h4" className={classes.h4}>
+            Where I've Worked
+          </Typography>
+        </Box>
+
+        <Box className={classes.vtabs}>
+          <Tabs
+            orientation="vertical"
+            variant="scrollable"
+            value={value}
+            onChange={handleChange}
+            aria-label="Vertical tabs "
+            className={classes.tabs}
+          >
+            <Tab label="Freelance " {...a11yProps(0)} />
+            <Tab label="Nimorah" {...a11yProps(1)} />
+            <Tab label="General Assembly" {...a11yProps(2)} />
+          </Tabs>
+          <TabPanel className={classes.tabpanel} value={value} index={0}>
+            Currently I am a freelance developer creating websites, email
+            templates, fixing issues with clients applications.
+          </TabPanel>
+          <TabPanel className={classes.tabpanel} value={value} index={1}>
+            I was a front end developer for Nimorah. Developed components for
+            client websites primarily using HTML, CSS, VUE, Laravel.`
+          </TabPanel>
+          <TabPanel className={classes.tabpanel} value={value} index={2}>
+            Participated in a full-time immersive Software Engineering course,
+            completing in-class projects, and personal projects focused on
+            real-world applications of web development principles and best
+            practices.
+          </TabPanel>
         </Box>
       </Container>
     </div>

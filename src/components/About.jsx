@@ -1,12 +1,21 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-// import useMediaQuery from "@material-ui/core/useMediaQuery";
+import theme from "../theme";
 
-import { Box, Card, CardMedia, Container, Typography } from "@material-ui/core";
+import {
+  Box,
+  Card,
+  CardMedia,
+  Container,
+  Typography,
+  ThemeProvider,
+  Grid,
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "#64ffda",
+    padding: "10%",
+    margin: "0 auto",
   },
   card: {
     maxWidth: 300,
@@ -14,19 +23,33 @@ const useStyles = makeStyles((theme) => ({
   },
   about: {
     width: "100%",
-    padding: "10%",
-    height: "50%",
+    height: "50vh",
+    // padding: 40,
   },
   heroBody: {
-    padding: 10,
     maxWidth: 500,
     minHeight: 100,
     display: "flex",
     flexDirection: "column",
   },
+  h2: {
+    color: "#fff",
+    margin: 10,
+  },
+  h6: {
+    color: "#627383",
+    margin: 10,
+  },
+  body: {
+    color: "#627383",
+    margin: 10,
+  },
   media: {
     height: 300,
-    width: 300,
+    maxWidth: 300,
+  },
+  img: {
+    // padding: 20,
   },
 }));
 
@@ -34,63 +57,33 @@ export default function About() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Container className={classes.about}>
-        <Box
-          display="flex"
-          flexDirection="row"
-          justifyContent="space-around"
-          alignContent="center"
-          alignItems="center"
-          flexWrap="wrap"
-          className={classes.root}
-        >
-          <Box className={classes.heroBody}>
-            <div class="GlassBox">
-              <Typography
-                p={20}
-                variant="h2"
-                component="h2"
-                className={classes.heroBody}
-              >
-                About Me
-              </Typography>
-              <Typography
-                variant="h3"
-                component="h3"
-                className={classes.heroBody}
-              >
-                Hello! I'm Fabian, a software engineer based in Austin, TX.{" "}
-              </Typography>
-              <Typography
-                variant="body1"
-                component="p"
-                className={classes.heroBody}
-              >
-                I enjoy creating things that live on the internet, whether that
-                be websites, applications, or anything in between. My goal is to
-                always build products that provide pixel-perfect, performant
-                experiences.
-              </Typography>
-              <Typography
-                variant="body1"
-                component="p"
-                className={classes.heroBody}
-              >
-                Shortly after graduating from Northeastern University, I joined
-                the engineering team at Upstatement where I work on a wide
-                variety of interesting and meaningful projects on a daily basis.
-              </Typography>
-              <Typography
-                variant="body1"
-                component="p"
-                className={classes.heroBody}
-              >
-                Here are a few technologies I've been working with recently:
-              </Typography>
-            </div>
-          </Box>
-          <Box display="flex" flexWrap="wrap">
-            <div class="GlassBox">
+      <Container>
+        <Box>
+          <Grid container spaceing={6}>
+            <Grid item xs={12} sm={6} md={6}>
+              <Box className={classes.heroBody}>
+                <Box>
+                  <Typography
+                    variant="h2"
+                    component="h2"
+                    className={classes.h2}
+                  >
+                    About Me
+                  </Typography>
+                </Box>
+
+                <Typography variant="h6" component="h6" className={classes.h6}>
+                  Hello! I'm Fabian, a software developer based in Austin, TX.{" "}
+                </Typography>
+                <Typography variant="body1" className={classes.body}>
+                  Im bootcamp graduate making my way into the development
+                  community. Since graduation I’ve worked for a local company as
+                  a front end developer. Im currently working on freelancing my
+                  skills to help others build a site that fits their needs.
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6} className={classes.img}>
               <Card className={classes.card}>
                 <CardMedia
                   className={classes.media}
@@ -98,8 +91,8 @@ export default function About() {
                   title="Fabian Picture"
                 />
               </Card>
-            </div>
-          </Box>
+            </Grid>
+          </Grid>
         </Box>
       </Container>
     </div>

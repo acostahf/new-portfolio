@@ -12,14 +12,16 @@ import Projects from "./components/Projects";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "110vh",
-    backgroundImage: `url(${
-      process.env.PUBLIC_URL + "../../assests/pexels-stephan-seeber-1261728.jpg"
-    })`,
+    // height: "110vh",
+    backgroundColor: "#021A33",
+    // backgroundImage: `url(${
+    //   process.env.PUBLIC_URL + "../../assests/pexels-stephan-seeber-1261728.jpg"
+    // })`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
   },
 }));
+
 function App() {
   const classes = useStyles();
   return (
@@ -29,8 +31,8 @@ function App() {
         <NavBar />
         <Hero />
         <About />
-        <Projects />
         <Experience />
+        <Projects />
         <Footer />
       </div>
     </ThemeProvider>

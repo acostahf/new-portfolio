@@ -5,7 +5,7 @@ const theme = createMuiTheme({
     primary: {
       main: "#64ffda",
 
-      contrastText: "#fff",
+      contrastText: "#64ffda",
     },
     secondary: {
       main: "#64ffda",

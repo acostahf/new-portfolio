@@ -49,17 +49,7 @@ export default function Hero() {
       <div className={classes.root}>
         <CssBaseline />
         <Container className={classes.hero}>
-          <motion.div
-            animate={{ scale: 1.2 }}
-            transition={{ duration: 0.5 }}
-            drag
-            dragConstraints={{
-              top: -50,
-              left: -50,
-              right: 50,
-              bottom: 50,
-            }}
-          >
+          <motion.div animate={{ scale: 1.2 }} transition={{ duration: 0.5 }}>
             <Box className={classes.heroBody}>
               <Typography variant="subtitle1" color="primary">
                 Hi, my name is
@@ -74,7 +64,7 @@ export default function Hero() {
               <Button
                 variant="outlined"
                 color="primary"
-                href="acostahf4@gmail.com"
+                href="mailto:acostahf4@gmail.com"
                 className={classes.button}
               >
                 {" "}

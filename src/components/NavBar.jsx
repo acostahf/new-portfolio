@@ -61,7 +61,11 @@ export default function HideAppBar(props) {
               FA
             </Typography>
 
-            <Button variant="outlined" color="primary">
+            <Button
+              variant="outlined"
+              color="primary"
+              href="https://docs.google.com/document/d/1x3-xS_AOkQDxrS6FpqazxB7sQjYb4mKCq8eG19xodjE/edit?usp=sharing"
+            >
               Resume
             </Button>
           </Toolbar>

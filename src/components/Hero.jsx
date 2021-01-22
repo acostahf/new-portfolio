@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { Box, Button } from "@material-ui/core";
-import { motion } from "framer-motion";
+import gsap, { TweenMax, TimelineLite, Power3 } from "gsap";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     flexDirection: "column ",
+    visibility: "hidden",
   },
   heroBody: {
     display: "flex",
@@ -43,35 +44,53 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Hero() {
+  let heroContent = useRef(null);
+  let tl = new TimelineLite();
+
+  useEffect(() => {
+    const herofirst = heroContent.children[0];
+    const heroSecond = heroContent.children[1];
+    const heroThird = heroContent.children[2];
+    const heroFourth = heroContent.children[3];
+    console.log(heroSecond);
+
+    TweenMax.to(heroContent, 0, {
+      css: { visibility: "visible" },
+    });
+    tl.staggerFrom(
+      [herofirst, heroSecond, heroThird, heroFourth],
+      1,
+      { y: 44, ease: Power3.easeOut, opacity: 0, delay: 0.8 },
+      0.25
+    );
+    // .from(heroSecond, 1, { y: 1100, ease: Power3.easeOut, opacity: 0 }, 1.4);
+  });
   const classes = useStyles();
   return (
     <React.Fragment>
       <div className={classes.root}>
-        <CssBaseline />
         <Container className={classes.hero}>
-          <motion.div animate={{ scale: 1.2 }} transition={{ duration: 0.5 }}>
-            <Box className={classes.heroBody}>
-              <Typography variant="subtitle1" color="primary">
-                Hi, my name is
-              </Typography>
-              <Typography variant="h2" component="h2" className={classes.h2}>
-                Fabian Acosta
-              </Typography>
-              <Typography variant="h6" component="h6" className={classes.h6}>
-                Im a front end developer
-              </Typography>
+          <Box className={classes.heroBody} ref={(el) => (heroContent = el)}>
+            <Typography variant="subtitle1" color="primary">
+              Hi, my name is
+            </Typography>
+            <Typography variant="h2" component="h2" className={classes.h2}>
+              Fabian Acosta
+            </Typography>
+            <Typography variant="h6" component="h6" className={classes.h6}>
+              Im a front end developer
+            </Typography>
 
-              <Button
-                variant="outlined"
-                color="primary"
-                href="mailto:acostahf4@gmail.com"
-                className={classes.button}
-              >
-                {" "}
-                Get In Touch
-              </Button>
-            </Box>
-          </motion.div>
+            <Button
+              variant="outlined"
+              color="primary"
+              href="mailto:acostahf4@gmail.com"
+              className={classes.button}
+            >
+              {" "}
+              Get In Touch
+            </Button>
+          </Box>
         </Container>
       </div>
     </React.Fragment>

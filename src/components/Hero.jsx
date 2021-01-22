@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Hero() {
   let heroContent = useRef(null);
-  let tl = new TimelineLite();
+  let tl = new TimelineLite({ delay: 0.8 });
 
   useEffect(() => {
     const herofirst = heroContent.children[0];
@@ -61,7 +61,7 @@ export default function Hero() {
       [herofirst, heroSecond, heroThird, heroFourth],
       1,
       { y: 44, ease: Power3.easeOut, opacity: 0, delay: 0.8 },
-      0.25
+      0.15
     );
     // .from(heroSecond, 1, { y: 1100, ease: Power3.easeOut, opacity: 0 }, 1.4);
   });

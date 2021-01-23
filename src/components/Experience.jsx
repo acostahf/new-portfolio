@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Box, Container, Typography, Tabs, Tab } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
-import gsap, { TweenMax, TimelineLite, Power3 } from "gsap";
+import gsap, { TweenMax, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    height: "50vh",
+    height: "100vh",
     padding: "10%",
     margin: "0 auto",
 
@@ -103,7 +103,7 @@ export default function Experience() {
 
       scrollTrigger: {
         trigger: "#experienceTrigger",
-        markers: true,
+        // markers: true,
         start: "top center",
         toggleActions: "play complete complete complete",
       },

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import gsap, { TweenMax, TimelineLite, Power3 } from "gsap";
+import gsap, { TweenMax, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {
@@ -57,6 +57,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function About() {
   const classes = useStyles();
+  //animation
+
   let content = useRef(null);
   let wrapper = useRef(null);
   useEffect(() => {
@@ -68,6 +70,8 @@ export default function About() {
         toggleActions: "play complete complete complete",
       },
     });
+
+    
     const firstLine = content.children[0];
     const secondLine = content.children[1];
     const thirdLine = content.children[2];
@@ -84,13 +88,6 @@ export default function About() {
         ease: Power3.easeOut,
         opacity: 0,
         delay: 0.5,
-
-        // scrollTrigger: {
-        //   trigger: "#content",
-        //   markers: true,
-        //   start: "top center",
-        //   toggleActions: "play complete complete complete",
-        // },
       },
       0.15
     );

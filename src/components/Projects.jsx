@@ -8,8 +8,12 @@ import {
   IconButton,
   Link,
 } from "@material-ui/core";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import gsap, { TweenMax, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "100vh",
     padding: "10%",
     margin: "0 auto",
+  },
+  container: {
+    visibility: "hidden",
   },
   media: {
     height: 300,
@@ -68,18 +75,93 @@ const useStyles = makeStyles((theme) => ({
 export default function Projects() {
   const classes = useStyles();
 
+  let projects = useRef(null);
+  let firstImg = useRef(null);
+  let secondImg = useRef(null);
+  let thirdImg = useRef(null);
+  useEffect(() => {
+    console.log(projects);
+
+    const heading = projects.children[1];
+    // const first = projects.children[1];
+    const firstTxt = projects.children[2];
+    const secondTxt = projects.children[3];
+    // const fourth = projects.children[4];
+    // const fifth = projects.children[5];
+    const thirdTxt = projects.children[6];
+
+    TweenMax.to(projects, 0, {
+      css: { visibility: "visible" },
+    });
+
+    gsap.from(
+      [heading, firstImg, firstTxt],
+
+      {
+        y: 100,
+        duration: 2,
+        opacity: 0,
+        ease: Power3.easeOut,
+        delay: 1,
+
+        scrollTrigger: {
+          trigger: "#projectsTrigger",
+          // markers: true,
+          start: "top center",
+          toggleActions: "play complete complete complete",
+        },
+      }
+    );
+    gsap.from(
+      [secondImg, secondTxt],
+
+      {
+        y: 100,
+        duration: 2,
+        opacity: 0,
+        ease: Power3.easeOut,
+        delay: 1,
+
+        scrollTrigger: {
+          trigger: "#projectsTrigger2",
+          // markers: true,
+          start: "top center",
+          toggleActions: "play complete complete complete",
+        },
+      }
+    );
+    gsap.from(
+      [thirdImg, thirdTxt],
+
+      {
+        y: 100,
+        duration: 2,
+        opacity: 0,
+        ease: Power3.easeOut,
+        delay: 1,
+
+        scrollTrigger: {
+          trigger: "#projectsTrigger3",
+          // markers: true,
+          start: "top center",
+          toggleActions: "play complete complete complete",
+        },
+      }
+    );
+  }, []);
+
   return (
-    <div className={classes.root}>
-      <Container>
+    <div className={classes.root} id="projectsTrigger">
+      <Container className={classes.container}>
         <Box>
-          <Grid container spacing={6}>
+          <Grid ref={(el) => (projects = el)} container spacing={6}>
             <Grid item xs={12} sm={12} md={12} className={classes.heading}>
               <Typography variant="h4" className={classes.h4}>
                 A Few Creations
               </Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={6} className={classes.img}>
-              <Card className={classes.card}>
+              <Card className={classes.card} ref={(el) => (firstImg = el)}>
                 <Link href="https://stockwatchlistapp.herokuapp.com/traders">
                   <CardMedia
                     className={classes.media}
@@ -89,7 +171,14 @@ export default function Projects() {
                 </Link>
               </Card>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} className={classes.body}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={6}
+              className={classes.body}
+              id="projectsTrigger2"
+            >
               <Box display="flex" flexDirection="column">
                 <Typography variant="h3" className={classes.h3}>
                   Stock Watch{" "}
@@ -113,7 +202,14 @@ export default function Projects() {
               </Box>
             </Grid>
 
-            <Grid item xs={12} sm={12} md={6} className={classes.body}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={6}
+              className={classes.body}
+              id="projectsTrigger3"
+            >
               <Box display="flex" flexDirection="column">
                 <Typography variant="h3" className={classes.h3}>
                   E-commerce app
@@ -139,7 +235,7 @@ export default function Projects() {
               </Box>
             </Grid>
             <Grid item xs={12} sm={12} md={6} className={classes.img}>
-              <Card className={classes.card}>
+              <Card className={classes.card} ref={(el) => (secondImg = el)}>
                 <Link href="https://artworld-sei.herokuapp.com/">
                   <CardMedia
                     className={classes.media}
@@ -151,7 +247,7 @@ export default function Projects() {
             </Grid>
 
             <Grid item xs={12} sm={12} md={6} className={classes.img}>
-              <Card className={classes.card}>
+              <Card className={classes.card} ref={(el) => (thirdImg = el)}>
                 <Link href="https://restaurant-website-01.herokuapp.com/">
                   <CardMedia
                     className={classes.media}

@@ -1,10 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { Box, Button } from "@material-ui/core";
-import gsap, { TweenMax, TimelineLite, Power3 } from "gsap";
+import { TweenMax, TimelineLite, Power3 } from "gsap";
 
 const useStyles = makeStyles((theme) => ({
   root: {

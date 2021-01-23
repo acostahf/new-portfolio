@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Box, Container, Typography, Tabs, Tab } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
+import gsap, { TweenMax, TimelineLite, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -84,12 +88,34 @@ export default function Experience() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
+  let experience = useRef(null);
+  useEffect(() => {
+    TweenMax.to(experience, 0, {
+      css: { visibility: "visible" },
+    });
+
+    gsap.from(experience, {
+      y: 100,
+      duration: 2,
+      opacity: 0,
+      ease: Power3.easeOut,
+      delay: 1,
+
+      scrollTrigger: {
+        trigger: "#experienceTrigger",
+        markers: true,
+        start: "top center",
+        toggleActions: "play complete complete complete",
+      },
+    });
+  }, []);
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
   return (
-    <div className={classes.root}>
-      <Container>
+    <div className={classes.root} id="experienceTrigger">
+      <Container ref={(el) => (experience = el)}>
         <Box className={classes.heading}>
           <Typography variant="h4" className={classes.h4}>
             Where I've Worked

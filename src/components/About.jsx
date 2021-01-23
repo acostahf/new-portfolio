@@ -63,7 +63,7 @@ export default function About() {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#container",
-        markers: true,
+        // markers: true,
         start: "bottom center",
         toggleActions: "play complete complete complete",
       },

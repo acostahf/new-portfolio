@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     padding: "10%",
     margin: "0 auto",
+    height: "100vh",
   },
   card: {
     maxWidth: 300,

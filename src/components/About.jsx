@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import gsap, { TweenMax, TimelineLite, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {
   Box,
@@ -10,6 +12,7 @@ import {
   Grid,
 } from "@material-ui/core";
 
+gsap.registerPlugin(ScrollTrigger);
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: "10%",
@@ -46,21 +49,74 @@ const useStyles = makeStyles((theme) => ({
     height: 300,
     maxWidth: 300,
   },
-  img: {
-    // padding: 20,
+  box: {
+    visibility: "hidden",
   },
 }));
 
 export default function About() {
   const classes = useStyles();
+  let content = useRef(null);
+  let wrapper = useRef(null);
+  useEffect(() => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#container",
+        markers: true,
+        start: "bottom center",
+        toggleActions: "play complete complete complete",
+      },
+    });
+    const firstLine = content.children[0];
+    const secondLine = content.children[1];
+    const thirdLine = content.children[2];
+
+    TweenMax.to(wrapper, 0, {
+      css: { visibility: "visible" },
+    });
+    tl.staggerFrom(
+      [firstLine, secondLine, thirdLine],
+      1,
+      {
+        x: 100,
+        duration: 2,
+        ease: Power3.easeOut,
+        opacity: 0,
+        delay: 0.5,
+
+        // scrollTrigger: {
+        //   trigger: "#content",
+        //   markers: true,
+        //   start: "top center",
+        //   toggleActions: "play complete complete complete",
+        // },
+      },
+      0.15
+    );
+    gsap.from("#img", {
+      y: 100,
+      duration: 2,
+      opacity: 0,
+      ease: Power3.easeOut,
+      delay: 1,
+
+      scrollTrigger: {
+        trigger: "#box",
+        // markers: true,
+        start: "top center",
+        toggleActions: "play complete complete complete",
+      },
+    });
+  }, []);
+
   return (
     <div className={classes.root}>
       <Container>
-        <Box>
+        <Box className={classes.box} id="box" ref={(el) => (wrapper = el)}>
           <Grid container spaceing={6}>
             <Grid item xs={12} sm={6} md={6}>
-              <Box className={classes.heroBody}>
-                <Box>
+              <Box ref={(el) => (content = el)} id="content">
+                <Box className={classes.heroBody}>
                   <Typography
                     variant="h2"
                     component="h2"
@@ -82,7 +138,7 @@ export default function About() {
               </Box>
             </Grid>
             <Grid item xs={12} sm={6} md={6} className={classes.img}>
-              <Card className={classes.card}>
+              <Card className={classes.card} id="img">
                 <CardMedia
                   className={classes.media}
                   image="../../assests/profile.jpg"

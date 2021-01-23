@@ -52,7 +52,6 @@ export default function Hero() {
     const heroSecond = heroContent.children[1];
     const heroThird = heroContent.children[2];
     const heroFourth = heroContent.children[3];
-    console.log(heroSecond);
 
     TweenMax.to(heroContent, 0, {
       css: { visibility: "visible" },
@@ -69,7 +68,7 @@ export default function Hero() {
   return (
     <React.Fragment>
       <div className={classes.root}>
-        <Container className={classes.hero}>
+        <Container className={classes.hero} id="container">
           <Box className={classes.heroBody} ref={(el) => (heroContent = el)}>
             <Typography variant="subtitle1" color="primary">
               Hi, my name is

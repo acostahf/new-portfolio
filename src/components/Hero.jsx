@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { Box, Button } from "@material-ui/core";
-import { TweenMax, TimelineLite, Power3 } from "gsap";
+import gsap, { TweenMax, Power3 } from "gsap";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Hero() {
   let heroContent = useRef(null);
   useEffect(() => {
-    let tl = new TimelineLite({ delay: 0.2 });
+    let tl = gsap.timeline({ delay: 0.2 });
     const herofirst = heroContent.children[0];
     const heroSecond = heroContent.children[1];
     const heroThird = heroContent.children[2];

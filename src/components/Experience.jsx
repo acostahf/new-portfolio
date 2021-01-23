@@ -52,12 +52,12 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: "#fff",
   },
   vtabs: {
-    backgroundColor: "none",
+    backgroundColor: "#06394a",
     color: "#627383",
 
     display: "flex",
     height: 224,
-    borderRadius: "2%",
+
     padding: 15,
     margin: 20,
   },

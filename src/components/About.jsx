@@ -71,7 +71,6 @@ export default function About() {
       },
     });
 
-    
     const firstLine = content.children[0];
     const secondLine = content.children[1];
     const thirdLine = content.children[2];
@@ -125,7 +124,7 @@ export default function About() {
                 </Box>
 
                 <Typography variant="h6" component="h6" className={classes.h6}>
-                  Hello! I'm Fabian, a software developer based in Austin, TX.{" "}
+                  Hello! I'm Fabian, a web developer based in Austin, TX.{" "}
                 </Typography>
                 <Typography variant="body1" className={classes.body}>
                   Im bootcamp graduate making my way into the development

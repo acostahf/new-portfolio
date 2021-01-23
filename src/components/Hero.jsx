@@ -75,7 +75,7 @@ export default function Hero() {
               Fabian Acosta
             </Typography>
             <Typography variant="h6" component="h6" className={classes.h6}>
-              Im a front end developer
+              Im a Web Developer
             </Typography>
 
             <Button

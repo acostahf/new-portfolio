@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     padding: "10%",
     margin: "0 auto",
     height: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column ",
   },
   card: {
     maxWidth: 300,
@@ -26,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   about: {
     width: "100%",
     height: "50vh",
+
     // padding: 40,
   },
   heroBody: {

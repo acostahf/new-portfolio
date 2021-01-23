@@ -80,8 +80,6 @@ export default function Projects() {
   let secondImg = useRef(null);
   let thirdImg = useRef(null);
   useEffect(() => {
-    console.log(projects);
-
     const heading = projects.children[1];
     // const first = projects.children[1];
     const firstTxt = projects.children[2];

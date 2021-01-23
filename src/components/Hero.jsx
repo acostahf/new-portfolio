@@ -44,9 +44,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Hero() {
   let heroContent = useRef(null);
-  let tl = new TimelineLite({ delay: 0.2 });
-
   useEffect(() => {
+    let tl = new TimelineLite({ delay: 0.2 });
     const herofirst = heroContent.children[0];
     const heroSecond = heroContent.children[1];
     const heroThird = heroContent.children[2];
@@ -62,7 +61,7 @@ export default function Hero() {
       0.15
     );
     // .from(heroSecond, 1, { y: 1100, ease: Power3.easeOut, opacity: 0 }, 1.4);
-  }, [tl]);
+  });
   const classes = useStyles();
   return (
     <React.Fragment>

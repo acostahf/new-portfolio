@@ -7,8 +7,9 @@ import gsap, { TweenMax, Power3 } from "gsap";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: "100vh",
+    minHeight: "80vh",
     display: "flex",
+    padding: "10%",
   },
   hero: {
     flexGrow: 0,
@@ -21,24 +22,28 @@ const useStyles = makeStyles((theme) => ({
   heroBody: {
     display: "flex",
     flexDirection: "column ",
-    padding: "10%",
-    margin: 10,
+    // padding: "10%",
   },
   rocket: {
     height: "100vh",
     width: "100%",
   },
-  h2: {
+  h1: {
     color: "#fff",
   },
 
-  h6: {
+  h5: {
     color: "#627383",
+    paddingLeft: 6,
+  },
+  subtitle: {
+    paddingLeft: 6,
   },
   button: {
     width: 150,
     padding: 10,
     marginTop: 20,
+    marginLeft: 6,
   },
 }));
 
@@ -64,32 +69,34 @@ export default function Hero() {
   });
   const classes = useStyles();
   return (
-    <React.Fragment>
-      <div className={classes.root}>
-        <Container className={classes.hero} id="container">
-          <Box className={classes.heroBody} ref={(el) => (heroContent = el)}>
-            <Typography variant="subtitle1" color="primary">
-              Hi, my name is
-            </Typography>
-            <Typography variant="h2" component="h2" className={classes.h2}>
-              Fabian Acosta
-            </Typography>
-            <Typography variant="h6" component="h6" className={classes.h6}>
-              Im a Web Developer
-            </Typography>
+    <div className={classes.root}>
+      <Container className={classes.hero} id="container">
+        <Box className={classes.heroBody} ref={(el) => (heroContent = el)}>
+          <Typography
+            variant="subtitle1"
+            color="primary"
+            className={classes.subtitle}
+          >
+            Hi, my name is
+          </Typography>
+          <Typography variant="h1" component="h1" className={classes.h1}>
+            Fabian Acosta
+          </Typography>
+          <Typography variant="h5" component="h5" className={classes.h5}>
+            I'm a Software Developer
+          </Typography>
 
-            <Button
-              variant="outlined"
-              color="primary"
-              href="mailto:acostahf4@gmail.com"
-              className={classes.button}
-            >
-              {" "}
-              Get In Touch
-            </Button>
-          </Box>
-        </Container>
-      </div>
-    </React.Fragment>
+          <Button
+            variant="outlined"
+            color="primary"
+            href="mailto:acostahf4@gmail.com"
+            className={classes.button}
+          >
+            {" "}
+            Get In Touch
+          </Button>
+        </Box>
+      </Container>
+    </div>
   );
 }

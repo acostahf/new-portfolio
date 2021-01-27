@@ -45,14 +45,14 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    height: "100vh",
+    height: "80vh",
     padding: "10%",
     margin: "0 auto",
 
     // backgroundColor: "#fff",
   },
   vtabs: {
-    backgroundColor: "#06394a",
+    // backgroundColor: "#06394a",
     color: "#627383",
 
     display: "flex",
@@ -64,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
     overflow: "visible",
+    color: "#64ffda",
   },
   tabpanel: {
     overflow: "auto",

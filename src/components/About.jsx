@@ -3,60 +3,44 @@ import { makeStyles } from "@material-ui/core/styles";
 import gsap, { TweenMax, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import {
-  Box,
-  Card,
-  CardMedia,
-  Container,
-  Typography,
-  Grid,
-} from "@material-ui/core";
+import { Box, Container, Typography, Grid } from "@material-ui/core";
 
 gsap.registerPlugin(ScrollTrigger);
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: "10%",
     margin: "0 auto",
-    height: "100vh",
+    height: "80vh",
     display: "flex",
     justifyContent: "center",
     flexDirection: "column ",
   },
-  card: {
-    maxWidth: 300,
-    maxHeight: 300,
-    marginTop: 20,
-  },
-  about: {
-    width: "100%",
-    height: "50vh",
-
-    // padding: 40,
-  },
-  heroBody: {
+  content: {
     maxWidth: 500,
     minHeight: 100,
-    display: "flex",
-    flexDirection: "column",
+    padding: 20,
   },
   h2: {
     color: "#fff",
-    margin: 10,
+    marginBottom: 10,
   },
   h6: {
     color: "#627383",
-    margin: 10,
+    marginBottom: 10,
   },
   body: {
     color: "#627383",
-    margin: 20,
   },
-  media: {
-    height: 300,
-    maxWidth: 300,
-  },
+
   box: {
     visibility: "hidden",
+  },
+  img: {
+    maxHeight: "100%",
+    maxWidth: "100%",
+  },
+  imgBox: {
+    padding: 20,
   },
 }));
 
@@ -115,38 +99,42 @@ export default function About() {
     <div className={classes.root}>
       <Container>
         <Box className={classes.box} id="box" ref={(el) => (wrapper = el)}>
-          <Grid container spaceing={6}>
-            <Grid item xs={12} sm={6} md={6}>
-              <Box ref={(el) => (content = el)} id="content">
-                <Box className={classes.heroBody}>
-                  <Typography
-                    variant="h2"
-                    component="h2"
-                    className={classes.h2}
-                  >
-                    About Me
-                  </Typography>
-                </Box>
+          <Grid container>
+            <Grid item xs={12} sm={12} md={6}>
+              <Box
+                ref={(el) => (content = el)}
+                id="content"
+                className={classes.content}
+              >
+                <Typography variant="h2" component="h2" className={classes.h2}>
+                  About Me
+                </Typography>
 
                 <Typography variant="h6" component="h6" className={classes.h6}>
-                  Hello! I'm Fabian, a web developer based in Austin, TX.{" "}
+                  Hello! I'm Fabian, a software developer based in Austin, TX.{" "}
                 </Typography>
+
                 <Typography variant="body1" className={classes.body}>
-                  Im bootcamp graduate making my way into the development
+                  I'm a bootcamp graduate making my way into the development
                   community. Since graduation I’ve worked for a local company as
                   a front end developer. Im currently working on freelancing my
                   skills to help others build a site that fits their needs.
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6} md={6} className={classes.img}>
-              <Card className={classes.card} id="img">
-                <CardMedia
-                  className={classes.media}
-                  image="../../assests/profile.jpg"
-                  title="Fabian Picture"
-                />
-              </Card>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={6}
+              spacing={6}
+              display="flex"
+              flexDirection="row"
+              justifyContent="center"
+            >
+              <Box className={classes.imgBox} id="img">
+                <img className={classes.img} src="../../assests/profile.jpg" />
+              </Box>
             </Grid>
           </Grid>
         </Box>

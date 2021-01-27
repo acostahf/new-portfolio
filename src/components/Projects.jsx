@@ -48,10 +48,11 @@ const useStyles = makeStyles((theme) => ({
   },
   h3: {
     color: "#64ffda",
+    paddingBottom: 20,
   },
   subtitle: {
     color: "#627383",
-    padding: 20,
+    paddingBottom: 20,
   },
   img: {
     marginBottom: 25,
@@ -80,7 +81,7 @@ export default function Projects() {
   let secondImg = useRef(null);
   let thirdImg = useRef(null);
   useEffect(() => {
-    const heading = projects.children[1];
+    const heading = projects.children[0];
     // const first = projects.children[1];
     const firstTxt = projects.children[2];
     const secondTxt = projects.children[3];

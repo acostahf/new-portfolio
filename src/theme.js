@@ -14,6 +14,9 @@ const theme = createMuiTheme({
     },
     textPrimary: { main: "#fff" },
   },
+  typography: {
+    fontFamily: ['"Segoe UI"'].join(","),
+  },
 });
 
 export default theme;

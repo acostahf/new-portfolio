@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "80vh",
     display: "flex",
-    padding: "10%",
   },
   hero: {
     flexGrow: 0,

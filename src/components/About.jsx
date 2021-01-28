@@ -3,62 +3,82 @@ import { makeStyles } from "@material-ui/core/styles";
 import gsap, { TweenMax, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import {
-  Box,
-  Card,
-  CardMedia,
-  Container,
-  Typography,
-  Grid,
-} from "@material-ui/core";
+import { Box, Container, Typography, Grid } from "@material-ui/core";
 
 gsap.registerPlugin(ScrollTrigger);
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: "10%",
-    margin: "0 auto",
-    height: "100vh",
+    minHeight: "80vh",
     display: "flex",
     justifyContent: "center",
     flexDirection: "column ",
   },
-  card: {
-    maxWidth: 300,
-    maxHeight: 300,
-    marginTop: 20,
-  },
-  about: {
-    width: "100%",
-    height: "50vh",
-
-    // padding: 40,
-  },
-  heroBody: {
+  content: {
     maxWidth: 500,
     minHeight: 100,
-    display: "flex",
-    flexDirection: "column",
+    padding: 20,
+    marginBottom: 20,
   },
   h2: {
-    color: "#fff",
-    margin: 10,
+    color: "#f5f5f5",
+    marginBottom: 10,
   },
   h6: {
     color: "#627383",
-    margin: 10,
+    marginBottom: 15,
   },
   body: {
     color: "#627383",
-    margin: 20,
+    marginBottom: 15,
   },
-  media: {
-    height: 300,
-    maxWidth: 300,
-  },
+
   box: {
     visibility: "hidden",
   },
+  img: {
+    maxHeight: "100%",
+    maxWidth: "100%",
+    borderRadius: 10,
+  },
+  imgBox: {
+    padding: 20,
+  },
+  line: {
+    height: 2,
+    backgroundColor: "#64ffda",
+    marginBottom: 15,
+  },
+  listTxt: {
+    color: "#f5f5f5",
+  },
 }));
+
+const listData = [
+  {
+    name: "React",
+  },
+  {
+    name: "Vue.js",
+  },
+  {
+    name: "Node.js",
+  },
+  {
+    name: " Tailwind.css",
+  },
+  {
+    name: "HTML & CSS",
+  },
+  {
+    name: "Material-Ui",
+  },
+  {
+    name: "GSAP",
+  },
+  {
+    name: "Javascript",
+  },
+];
 
 export default function About() {
   const classes = useStyles();
@@ -79,12 +99,24 @@ export default function About() {
     const firstLine = content.children[0];
     const secondLine = content.children[1];
     const thirdLine = content.children[2];
+    const fourthLine = content.children[3];
+    const fifthLine = content.children[4];
+    const sixthLine = content.children[5];
+    const seventhLine = content.children[6];
 
     TweenMax.to(wrapper, 0, {
       css: { visibility: "visible" },
     });
     tl.staggerFrom(
-      [firstLine, secondLine, thirdLine],
+      [
+        firstLine,
+        secondLine,
+        thirdLine,
+        fourthLine,
+        fifthLine,
+        sixthLine,
+        seventhLine,
+      ],
       1,
       {
         x: 100,
@@ -115,38 +147,61 @@ export default function About() {
     <div className={classes.root}>
       <Container>
         <Box className={classes.box} id="box" ref={(el) => (wrapper = el)}>
-          <Grid container spaceing={6}>
-            <Grid item xs={12} sm={6} md={6}>
-              <Box ref={(el) => (content = el)} id="content">
-                <Box className={classes.heroBody}>
-                  <Typography
-                    variant="h2"
-                    component="h2"
-                    className={classes.h2}
-                  >
-                    About Me
-                  </Typography>
-                </Box>
+          <Grid container>
+            <Grid item xs={12} sm={12} md={6}>
+              <Box
+                ref={(el) => (content = el)}
+                id="content"
+                className={classes.content}
+              >
+                <Typography variant="h2" component="h2" className={classes.h2}>
+                  About Me
+                </Typography>
+                <Typography className={classes.line}></Typography>
 
                 <Typography variant="h6" component="h6" className={classes.h6}>
-                  Hello! I'm Fabian, a web developer based in Austin, TX.{" "}
+                  Hello! I'm Fabian, a software developer based in Austin, TX.{" "}
+                </Typography>
+
+                <Typography variant="body1" className={classes.body}>
+                  I love being part of a team to make a vision into a reality
+                  online and have grown to enjoy the front end side of
+                  development, whether that is a React project, email templates,
+                  or learning a new stack.
                 </Typography>
                 <Typography variant="body1" className={classes.body}>
-                  Im bootcamp graduate making my way into the development
-                  community. Since graduation I’ve worked for a local company as
-                  a front end developer. Im currently working on freelancing my
-                  skills to help others build a site that fits their needs.
+                  Since graduating from General Assembly, I had the opportunity
+                  to work for Nimaroh studios as a front end developer on a few
+                  projects and continued to be a freelance developer for them
+                  when they do get a new client looking for a website.
                 </Typography>
+                <Typography variant="body1" className={classes.body}>
+                  Recent technologies I’ve been working with:
+                </Typography>
+
+                <Grid container item xs={12} spacing={1}>
+                  {listData.map((item) => (
+                    <Grid item xs={6} key={item.name}>
+                      <Typography
+                        className={classes.listTxt}
+                        variant="body1"
+                        value={item.name}
+                      >
+                        {item.name}
+                      </Typography>
+                    </Grid>
+                  ))}
+                </Grid>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6} md={6} className={classes.img}>
-              <Card className={classes.card} id="img">
-                <CardMedia
-                  className={classes.media}
-                  image="../../assests/profile.jpg"
-                  title="Fabian Picture"
+            <Grid item xs={12} sm={12} md={6}>
+              <Box className={classes.imgBox} id="img">
+                <img
+                  className={classes.img}
+                  src="../../assests/profile.jpg"
+                  alt=""
                 />
-              </Card>
+              </Box>
             </Grid>
           </Grid>
         </Box>

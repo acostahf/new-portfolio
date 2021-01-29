@@ -4,6 +4,7 @@ import {
   Box,
   Typography,
   IconButton,
+  ButtonBase,
 } from "@material-ui/core";
 import React, { useRef, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
@@ -90,7 +91,7 @@ const listData = [
       "material-ui for a more of a clean look.",
     tech: ["Javascript", "Node.js", "Express", "MongoDb", "Material-ui"],
     img: "../../assests/stockwatch.png",
-    url: "https://stockwatchlistapp.herokuapp.com/traders",
+    imgUrl: "https://stockwatchlistapp.herokuapp.com/traders",
     github: "https://github.com/acostahf/stock-watchlist",
   },
   {
@@ -104,7 +105,7 @@ const listData = [
       " with the team.",
     tech: ["Python", "Django", "Postgress", "Bootstrap"],
     img: "../../assests/artworld.png",
-    url: "https://artworld-sei.herokuapp.com/",
+    imgUrl: "https://artworld-sei.herokuapp.com/",
     github: "https://github.com/acostahf/artworld",
   },
   {
@@ -120,7 +121,7 @@ const listData = [
       "  ordering feature.",
     tech: ["React", "Express", "MongoDb", "Node.js", "Material-ui"],
     img: "../../assests/restaurant.png",
-    url: "https://restaurant-website-01.herokuapp.com/",
+    imgUrl: "https://restaurant-website-01.herokuapp.com/",
     github: "https://github.com/acostahf/resturant-website",
   },
 ];
@@ -231,9 +232,19 @@ export default function Projects() {
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} className={classes.imgGrid}>
-                  <Box className={classes.imgBox} id="img">
-                    <img className={classes.img} src={item.img} alt="" />
-                  </Box>
+                  <ButtonBase
+                    focusRipple
+                    key={item.imgUrl}
+                    href={item.imgUrl}
+                    className={classes.imgBox}
+                    style={{
+                      width: "100%",
+                    }}
+                  >
+                    <Box id="img">
+                      <img className={classes.img} src={item.img} alt="" />
+                    </Box>
+                  </ButtonBase>
                 </Grid>
               </Grid>
             ))}

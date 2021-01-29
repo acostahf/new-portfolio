@@ -44,8 +44,9 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 30,
   },
   img: {
-    maxHeight: "100%",
-    maxWidth: "100%",
+    height: "100%",
+    width: "100%",
+
     borderRadius: 10,
   },
   imgGrid: {

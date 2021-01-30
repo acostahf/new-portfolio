@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   img: {
     maxHeight: "100%",
     maxWidth: "100%",
-    borderRadius: 10,
+    borderRadius: "50%",
   },
   imgBox: {
     padding: 20,

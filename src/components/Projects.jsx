@@ -81,6 +81,22 @@ const useStyles = makeStyles((theme) => ({
 
 const listData = [
   {
+    title: "Restaurant Website",
+    description:
+      "This is a full-stack restaurant website built using the MERN" +
+      "stack. The goal for this project was to complete and deliver a" +
+      "working project in order to graduate from the course. The" +
+      "requirements for this was to use the MERN stack, CRUD" +
+      " operations, authentication, deploy to heroku, and finish" +
+      "within two weeks. Since completion of this website I have" +
+      "continued to work on the styling and implementing an online" +
+      "  ordering feature.",
+    tech: ["React", "Express", "MongoDb", "Node.js", "Material-ui"],
+    img: "../../assests/restaurant.png",
+    imgUrl: "https://restaurant-website-01.herokuapp.com/",
+    github: "https://github.com/acostahf/resturant-website",
+  },
+  {
     title: "Stock Watch",
     description:
       "A full stack application to allow a user to log their trades" +
@@ -107,22 +123,6 @@ const listData = [
     img: "../../assests/artworld.png",
     imgUrl: "https://artworld-sei.herokuapp.com/",
     github: "https://github.com/acostahf/artworld",
-  },
-  {
-    title: "Restaurant Website",
-    description:
-      "This is a full-stack restaurant website built using the MERN" +
-      "stack. The goal for this project was to complete and deliver a" +
-      "working project in order to graduate from the course. The" +
-      "requirements for this was to use the MERN stack, CRUD" +
-      " operations, authentication, deploy to heroku, and finish" +
-      "within two weeks. Since completion of this website I have" +
-      "continued to work on the styling and implementing an online" +
-      "  ordering feature.",
-    tech: ["React", "Express", "MongoDb", "Node.js", "Material-ui"],
-    img: "../../assests/restaurant.png",
-    imgUrl: "https://restaurant-website-01.herokuapp.com/",
-    github: "https://github.com/acostahf/resturant-website",
   },
 ];
 

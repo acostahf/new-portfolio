@@ -81,6 +81,15 @@ const useStyles = makeStyles((theme) => ({
 
 const listData = [
   {
+    title: "E-mail Templates",
+    description:
+      "This was a project I did with a local company to create email templates for their clients website. The goals for this project were to meet the deadline, create templates that reflected their brand, and have them be responsive on all platforms.",
+    tech: ["HTML", "CSS", "Maizzle", "Figma"],
+    img: "../../assests/emails.png",
+    imgUrl: "",
+    github: "https://github.com/acostahf/queenly-templates",
+  },
+  {
     title: "Restaurant Website",
     description:
       "This is a full-stack restaurant website built using the MERN" +

@@ -24,12 +24,12 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     color: "#f5f5f5",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
     height: 200,
     margin: 20,
     padding: 20,
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
   },
   h4: {
     color: "#fff",
@@ -38,11 +38,18 @@ const useStyles = makeStyles((theme) => ({
   h3: {
     color: "#f5f5f5",
     paddingBottom: 20,
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
   },
   subtitle: {
     color: "#627383",
     paddingBottom: 20,
     marginRight: 30,
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+      margin: 0,
+    },
   },
   img: {
     height: "100%",
@@ -68,6 +75,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
     paddingBottom: 20,
     marginRight: 30,
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "center",
+      paddingTop: 10,
+    },
   },
   line: {
     height: 2,
@@ -76,10 +87,22 @@ const useStyles = makeStyles((theme) => ({
   },
   listTxt: {
     color: "#f5f5f5",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
   },
 }));
 
 const listData = [
+  {
+    title: "E-mail Templates",
+    description:
+      "This was a project I did with a local company to create email templates for their clients website. The goals for this project were to meet the deadline, create templates that reflected their brand, and have them be responsive on all platforms.",
+    tech: ["HTML", "CSS", "Maizzle", "Figma"],
+    img: "../../assests/emails.png",
+    imgUrl: "",
+    github: "https://github.com/acostahf/queenly-templates",
+  },
   {
     title: "Restaurant Website",
     description:
@@ -196,7 +219,7 @@ export default function Projects() {
             {listData.map((item) => (
               <Grid container item className={classes.body} key={item.title}>
                 <Grid item xs={12} sm={12} md={6} id="projectsTrigger2">
-                  <Box display="flex" flexDirection="column" key={item.title}>
+                  <Box key={item.title}>
                     <Typography variant="h3" className={classes.h3}>
                       {item.title}
                     </Typography>

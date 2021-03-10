@@ -59,7 +59,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     minHeight: "80vh",
     margin: "0 auto",
-
     // backgroundColor: "#fff",
   },
   vtabs: {
@@ -69,20 +68,34 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 300,
     padding: 15,
     margin: 20,
+    [theme.breakpoints.down("sm")]: {
+      padding: 2,
+      margin: 2,
+    },
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
     overflow: "visible",
     color: "#f5f5f5",
     padding: 24,
+    [theme.breakpoints.down("sm")]: {
+      padding: 2,
+    },
   },
   tabpanel: {
     overflow: "auto",
     width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      overflow: "scroll",
+      padding: 2,
+    },
   },
   h4: {
     color: "#f5f5f5",
     margin: 20,
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
   },
   heading: {
     margin: 20,
@@ -103,6 +116,9 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     color: "#64ffda",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
 }));
 
@@ -184,8 +200,7 @@ export default function Experience() {
                   <NavigateNextOutlined />
                 </ListItemIcon>
                 <ListItemText>
-                  Work on existing projects to develop into a service for future
-                  clients using the MERN stack.
+                  Creating websites using Wordpress and Kajabi.
                 </ListItemText>
               </ListItem>
             </List>

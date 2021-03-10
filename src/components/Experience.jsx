@@ -184,8 +184,7 @@ export default function Experience() {
                   <NavigateNextOutlined />
                 </ListItemIcon>
                 <ListItemText>
-                  Work on existing projects to develop into a service for future
-                  clients using the MERN stack.
+                  Creating websites using Wordpress and Kajabi.
                 </ListItemText>
               </ListItem>
             </List>

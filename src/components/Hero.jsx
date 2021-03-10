@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "80vh",
     display: "flex",
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: 30,
+    },
   },
   hero: {
     flexGrow: 0,

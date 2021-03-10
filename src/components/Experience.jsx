@@ -93,6 +93,9 @@ const useStyles = makeStyles((theme) => ({
   h4: {
     color: "#f5f5f5",
     margin: 20,
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
   },
   heading: {
     margin: 20,

@@ -22,14 +22,23 @@ const useStyles = makeStyles((theme) => ({
   h2: {
     color: "#f5f5f5",
     marginBottom: 10,
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
   },
   h6: {
     color: "#627383",
     marginBottom: 15,
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
   },
   body: {
     color: "#627383",
     marginBottom: 15,
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
   },
 
   box: {
@@ -50,6 +59,9 @@ const useStyles = makeStyles((theme) => ({
   },
   listTxt: {
     color: "#f5f5f5",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
   },
 }));
 

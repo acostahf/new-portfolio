@@ -1,6 +1,8 @@
+import React, { useRef, useState, useMemo } from "react";
 import "./App.css";
 import "fontsource-roboto";
 import NavBar from "./components/NavBar";
+import Three from "./components/Three";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
@@ -9,6 +11,9 @@ import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import theme from "./theme";
 import { makeStyles } from "@material-ui/core/styles";
 import Projects from "./components/Projects";
+
+import { Canvas, useFrame } from "react-three-fiber";
+import * as THREE from "three";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,6 +34,7 @@ function App() {
       <div className={classes.root}>
         <CssBaseline />
         <NavBar />
+        <Three />
         <Hero />
         <About />
         <Experience />

@@ -95,6 +95,33 @@ const useStyles = makeStyles((theme) => ({
 
 const listData = [
   {
+    title: "Green Light Social",
+    description:
+      "Green Light Social was opening up a new location in the dallas area and need help creating a site for this location. The site is a custom wordpress theme that need some new gutenberg blocks develop for their needs. I were able to develop their site for them using php and html/css just in time for the new year. ",
+    tech: ["PHP", "CSS", "HTML", "Wordpress"],
+    img: "../../assests/gls.png",
+    imgUrl: "https://greenlightsocial.com/gls-dallas/",
+    github: "",
+  },
+  {
+    title: "Double A Labs",
+    description:
+      "We created a site for the Double A Labs Team to improve their brand and give them a website with a modern look. I choose to go with a gastby.js site for a fast development process and the SEO score we were looking to achieve. We were able to meet the deadline for development in under a week and get a google seo score in the 90s.",
+    tech: ["Gastby.js", "Tailwind.css", "HTML", "Figma"],
+    img: "../../assests/dal.png",
+    imgUrl: "https://www.doublealabs.com/",
+    github: "https://github.com/acostahf/Double-A-Labs",
+  },
+  {
+    title: "Austin Music Foundation",
+    description:
+      "Austin Music Foundation team reached out to get their theme re-created using a different method because of issue with their site. The goal for this project was to get the site to look just like how it orginal was but with a easy to manage theme and improving their SEO score on google. I was able to achieve all their wishs and get them a new site that they can trust. ",
+    tech: ["Wordpress", "gutenberg blocks", "CSS"],
+    img: "../../assests/amf.png",
+    imgUrl: "https://austinmusicfoundation.org/",
+    github: "",
+  },
+  {
     title: "E-mail Templates",
     description:
       "This was a project I did with a local company to create email templates for their clients website. The goals for this project were to meet the deadline, create templates that reflected their brand, and have them be responsive on all platforms.",
@@ -102,6 +129,15 @@ const listData = [
     img: "../../assests/emails.png",
     imgUrl: "",
     github: "https://github.com/acostahf/queenly-templates",
+  },
+  {
+    title: "V2admissions",
+    description:
+      "V2admissions were in the process of developing their site using Kajabi but need some help with the front-end development in webflow. I came on to the project to take over of all the develpment for the project in order to help meet the deadline.",
+    tech: ["HTML", "CSS", "Webflow", "Kajabi"],
+    img: "../../assests/v2.png",
+    imgUrl: "https://www.v2admissions.com/",
+    github: "",
   },
   {
     title: "Restaurant Website",

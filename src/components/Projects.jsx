@@ -97,7 +97,7 @@ const listData = [
   {
     title: "Green Light Social",
     description:
-      "Green Light Social was opening up a new location in the dallas area and need help creating a site for this location. The site is a custom wordpress theme that need some new gutenberg blocks develop for their needs. I were able to develop their site for them using php and html/css just in time for the new year. ",
+      "Green Light Social was opening up a new location in the Dallas area and need help creating a site for this location. The site is a custom WordPress theme that require some new Gutenberg blocks to develop for their needs. I was able to develop their site for them using PHP and html/css just in time for the new year.",
     tech: ["PHP", "CSS", "HTML", "Wordpress"],
     img: "../../assests/gls.png",
     imgUrl: "https://greenlightsocial.com/gls-dallas/",
@@ -115,8 +115,8 @@ const listData = [
   {
     title: "Austin Music Foundation",
     description:
-      "Austin Music Foundation team reached out to get their theme re-created using a different method because of issue with their site. The goal for this project was to get the site to look just like how it orginal was but with a easy to manage theme and improving their SEO score on google. I was able to achieve all their wishs and get them a new site that they can trust. ",
-    tech: ["Wordpress", "gutenberg blocks", "CSS"],
+      "Austin Music Foundation team reached out to get their theme re-created using a different method because of an issue with their site. The goal for this project was to get the site to look just like how it originally was but with an easy to manage theme and improving their SEO score on Google. I was able to achieve all their wishes and get them a new site that they can trust.",
+    tech: ["Wordpress", "Gutenberg blocks", "CSS"],
     img: "../../assests/amf.png",
     imgUrl: "https://austinmusicfoundation.org/",
     github: "",
@@ -133,7 +133,7 @@ const listData = [
   {
     title: "V2admissions",
     description:
-      "V2admissions were in the process of developing their site using Kajabi but need some help with the front-end development in webflow. I came on to the project to take over of all the develpment for the project in order to help meet the deadline.",
+      "V2admissions were in the process of developing their site using Kajabi but need some help with the front-end development in Webflow. I came on to the project to take over of all the development for the project in order to help meet the deadline.",
     tech: ["HTML", "CSS", "Webflow", "Kajabi"],
     img: "../../assests/v2.png",
     imgUrl: "https://www.v2admissions.com/",
